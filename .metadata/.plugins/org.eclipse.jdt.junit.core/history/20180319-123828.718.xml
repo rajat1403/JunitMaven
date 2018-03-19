@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AllTests" project="abc" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="abc.abc.AllTests" time="0.001">
+    <testsuite name="abc.abc.ConcateTest" time="0.001">
+      <testcase name="testConcatenate" classname="abc.abc.ConcateTest" time="0.001"/>
+    </testsuite>
+    <testsuite name="abc.abc.MultiplyTest" time="0.0">
+      <testcase name="test" classname="abc.abc.MultiplyTest" time="0.0"/>
+    </testsuite>
+  </testsuite>
+</testrun>
