@@ -1,8 +1,5 @@
 node {
 	
-	stage('CleanUp Workspace'){
-	       deleteDir()
-	}
 	
 	stage('Checkout') {
 	              git 'https://github.com/rajat1403/JunitMaven.git'
@@ -15,7 +12,7 @@ node {
 	              }
 	       }
 	
-	 stage('UnitTest') {
+	 stage('UnitTesting') {
 	     dir('abc'){
 	       try  {
 	                     bat 'mvn test'
@@ -23,7 +20,7 @@ node {
 	         
 	     
 	        catch(exc) {
-	       stage('JiraBugLog'){
+	       stage('JiraBug'){
 	       withEnv(['JIRA_SITE=LOCAL']){
 	              def testIssue = [fields: [ project: [key: 'RJ'],
 	                           summary: 'New JIRA Created from Jenkins.',
@@ -38,7 +35,7 @@ node {
 	         error('Unit Testing Failed so stopping pipeline')
 	       }
 	     }
-	       stage('Build'){
+	       stage('BuildCode'){
 	           dir('abc'){
 	        bat 'mvn clean install'
 	           }
