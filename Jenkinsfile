@@ -21,6 +21,6 @@ node {
   			sh "mvn test"
 	        
 	  }
-	 
+	 }
 	}
 
