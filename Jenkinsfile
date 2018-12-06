@@ -16,7 +16,9 @@ node {
 	
 	 stage('UnitTesting') {
 	   
-	                     sh 'mvn test'
+	                def mvn_version = 'Maven'
+			withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+  			sh "mvn test"
 	        
 	  }
 	 
