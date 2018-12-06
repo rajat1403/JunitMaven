@@ -15,16 +15,10 @@ node {
 	       }
 	
 	 stage('UnitTesting') {
-	     steps{
-	 
+	   
 	                     sh 'mvn test'
-	       }
 	        
-	       stage('BuildCode'){
-	           steps{
-	        sh 'mvn clean install'
-	           }
 	  }
-	  } 
+	 
 	}
 
