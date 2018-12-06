@@ -7,8 +7,10 @@ node {
 	
 	stage('SonarQube Analysis') {
 	
-	              withSonarQubeEnv('My SonarQube Server') {
-	              bat "C:/sonar-scanner-3.0.3.778-windows/bin/sonar-scanner"
+	               	def scannerHome = tool 'SonarQube Scanner 3.2';
+   			withSonarQubeEnv('My SonarQube Server') {
+   			sh "${scannerHome}/bin/sonar-scanner"
+			      
 	              }
 	       }
 	
