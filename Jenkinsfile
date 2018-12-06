@@ -1,6 +1,4 @@
-node {
-	
-	
+node {	
 	stage('Checkout') {
 	              git 'https://github.com/rajat1403/JunitMaven.git'
 	       }
@@ -22,5 +20,12 @@ node {
 			}
 	  }
 	 }
+	stage('BuildCode'){
+	           dir('abc'){
+	        def mvn_version = 'Maven'
+			withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+  			sh "mvn clean install"
+	           }
 	}
-
+	}
+}
