@@ -15,7 +15,7 @@ node {
 	 stage('UnitTesting') {
 	     dir('abc'){
 	       try  {
-	                     bat 'mvn test'
+	                     sh 'mvn test'
 	       }
 	         
 	     
@@ -37,7 +37,7 @@ node {
 	     }
 	       stage('BuildCode'){
 	           dir('abc'){
-	        bat 'mvn clean install'
+	        sh 'mvn clean install'
 	           }
 	  }
 	  } 
