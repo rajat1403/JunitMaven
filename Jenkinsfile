@@ -15,11 +15,11 @@ node {
 	       }
 	
 	 stage('UnitTesting') {
-	   
+		 dir('abc'){
 	                def mvn_version = 'Maven'
 			withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
   			sh "mvn test"
-	        
+			}
 	  }
 	 }
 	}
